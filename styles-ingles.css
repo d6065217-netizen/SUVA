@@ -1,0 +1,80 @@
+/* =========================
+   CONTENIDO ÁREA INGLÉS
+========================= */
+
+/* CONTENEDOR GENERAL */
+.ingles-content {
+    margin-top: 30px;
+}
+
+/* DESCRIPCIÓN DEL ÁREA */
+.ingles-description {
+    font-size: 14px;
+    color: #4B5563;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* GRID DE ACTIVIDADES */
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* TARJETA DE ACTIVIDAD */
+.activity-card {
+    background: #EEF4FF; /* tono suave azulado */
+    border-radius: 18px;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.activity-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+/* TÍTULO DE ACTIVIDAD */
+.activity-card h3 {
+    font-size: 16px;
+    color: #1E40AF; /* azul inglés */
+    margin-bottom: 10px;
+}
+
+/* TEXTO DE ACTIVIDAD */
+.activity-card p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+/* BOTÓN EMPEZAR */
+.activity-btn {
+    display: inline-block;
+    background: #1E40AF;
+    color: #FFFFFF;
+    padding: 10px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.activity-btn:hover {
+    background: #1E3A8A;
+}
+
+/* VOLVER */
+.back-area {
+    margin-top: 40px;
+}
+
+.back-area a {
+    text-decoration: none;
+    color: #1E40AF;
+    font-size: 14px;
+    font-weight: 600;
+}

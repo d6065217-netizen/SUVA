@@ -1,0 +1,674 @@
+/* =========================
+   RESET GENERAL
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   VARIABLES
+========================= */
+:root {
+    --azul: #0D5EA8;
+    --azul-dark: #083D77;
+    --beige: #F5F7E6;
+    --blanco: #FFFFFF;
+    --gris-texto: #2E2E2E;
+    --gris-suave: #6B7280;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+    background: var(--beige);
+    color: var(--gris-texto);
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+    height: 70px;
+    background: var(--blanco);
+    border-bottom: 3px solid var(--azul);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+/* ✅ LOGO (UN SOLO LOGO) */
+.logo {
+    height: 70px; /* PC */
+    width: auto;
+}
+
+/* =========================
+   USUARIO
+========================= */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    line-height: 1.2;
+    text-align: right;
+}
+
+.user-name {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.user-links {
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.user-links a {
+    color: var(--azul);
+    text-decoration: none;
+}
+
+.user-links a:hover {
+    text-decoration: underline;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* =========================
+   HAMBURGUESA
+========================= */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 24px;
+    height: 3px;
+    background: var(--azul);
+    border-radius: 3px;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+.layout {
+    display: flex;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+    width: 220px;
+    background: linear-gradient(to bottom, #1E73BE, var(--azul));
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-top: 20px;
+}
+
+.sidebar li a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.sidebar li.active a,
+.sidebar li a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* =========================
+   CONTENIDO
+========================= */
+.content {
+    flex: 1;
+    padding: 30px;
+    background: #F9FAFB;
+}
+
+.content h1 {
+    font-size: 26px;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: var(--gris-suave);
+    margin-bottom: 25px;
+}
+
+/* =========================
+   TARJETAS
+========================= */
+.cards,
+.areas-grid,
+.activities-grid {
+    display: grid;
+    gap: 24px;
+}
+
+.card,
+.area-card,
+.activity-card {
+    background: #F4F6EC;
+    padding: 25px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* =========================
+   BOTONES
+========================= */
+.area-btn,
+.activity-btn,
+.action a {
+    display: inline-block;
+    background: var(--azul);
+    color: var(--blanco);
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.area-btn:hover,
+.activity-btn:hover,
+.action a:hover {
+    background: var(--azul-dark);
+}
+
+/* Botones centrados */
+.area-card .area-btn,
+.activity-card .activity-btn,
+.card .area-btn {
+    align-self: center;
+}
+
+/* =========================
+   BOTÓN PRINCIPAL
+========================= */
+.action {
+    margin-top: 30px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    text-align: center;
+    padding: 12px;
+    font-size: 12px;
+    color: var(--gris-suave);
+}
+
+/* =========================
+   OVERLAY
+========================= */
+.overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 999;
+}
+
+/* =================================================
+   🖥️ DESKTOP — 3 POR FILA
+================================================= */
+@media (min-width: 769px) {
+
+    .layout {
+        min-height: calc(100vh - 70px);
+    }
+
+    .cards,
+    .areas-grid {
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+    }
+
+    .action {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* =================================================
+   📱 MÓVIL — LOGO + MENÚ + 1 POR FILA
+================================================= */
+@media (max-width: 768px) {
+
+    /* ✅ Logo más pequeño */
+    .logo {
+        height: 70px
+    }
+
+    /* Mostrar hamburguesa */
+    .hamburger {
+        display: flex;
+    }
+
+    .layout {
+        flex-direction: column;
+    }
+
+    /* Sidebar móvil */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -260px;
+        width: 260px;
+        height: 100%;
+        padding-top: 70px;
+        z-index: 1000;
+        transition: left 0.3s ease;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .overlay.show {
+        display: block;
+    }
+
+    .content {
+        padding: 16px;
+    }
+
+    .cards,
+    .areas-grid,
+    .activities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .area-btn,
+    .activity-btn,
+    .action a {
+        width: 100%;
+        text-align: center;
+    }
+}
+/* ESTADOS DE ACTIVIDADES */
+.estado {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.estado.completada {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.estado.progreso {
+    background: #e0e7ff;
+    color: #1e3a8a;
+}
+
+.estado.pendiente {
+    background: #fee2e2;
+    color: #7f1d1d;
+}
+
+/* ===============================
+   PANEL ADMIN – ESTILOS
+================================ */
+
+.admin-card {
+    max-width: 480px;
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    margin: 40px auto;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #dcdcdc;
+    font-size: 14px;
+    background: #f9f9f9;
+}
+
+.admin-btn {
+    width: 100%;
+    background: #0D5EA8;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.admin-card {
+    border: 5px solid #0D5EA8
+}
+@media (max-width: 768px) {
+
+    .admin-card {
+        width: 94%;
+        padding: 22px;
+        border-radius: 16px;
+    }
+
+    .admin-card h1 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .admin-btn {
+        width: 100%;
+        font-size: 15px;
+        padding: 14px;
+    }
+}
+/* =================================================
+   FIX DEFINITIVO HEADER USUARIO – MIS ACTIVIDADES
+   (DESKTOP Y MÓVIL)
+================================================= */
+
+/* Desktop */
+body.mis-actividades .header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+body.mis-actividades .user-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
+body.mis-actividades .user-name {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+body.mis-actividades .user-links {
+    font-size: 12px;
+}
+
+/* ✅ MOBILE – sobreescribe el media query general */
+@media (max-width: 768px) {
+
+    body.mis-actividades .header {
+        justify-content: space-between;
+    }
+
+    body.mis-actividades .header-right {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+    }
+
+    body.mis-actividades .user-text {
+        align-items: flex-end !important;
+        text-align: right !important;
+        line-height: 1.2;
+    }
+
+    body.mis-actividades .user-name {
+        font-size: 11px;
+    }
+
+    body.mis-actividades .user-links {
+        font-size: 11px;
+    }
+}
+
+* 
+   PROGRESO
+ */
+
+.progreso-page .admin-card {
+    max-width: 420px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 18px;
+    background: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, #0D5EA8, #083D77);
+    transition: width 0.4s ease;
+}
+
+/* MÓVIL */
+@media (max-width: 768px) {
+    .progreso-page .admin-card {
+        width: 95%;
+        padding: 22px;
+    }
+
+    .progress-bar {
+        height: 16px;
+    }
+}
+/* =========================
+   BOTONES PANEL ADMIN
+========================= */
+
+.admin-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.admin-link.secondary {
+    background: #6B7280;
+}
+
+.admin-link.secondary:hover {
+    background: #4B5563;
+}
+
+/* MÓVIL */
+@media (max-width: 768px) {
+    .admin-actions {
+        flex-direction: column;
+    }
+
+    .admin-link {
+        width: 100%;
+        text-align: center;
+    }
+}
+/* =========================
+   PANEL ADMIN – BOTONES Y TABLA
+========================= */
+
+/* Contenedor de botones */
+.admin-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0 30px 0;
+    flex-wrap: wrap;
+}
+
+/* Botones admin */
+.admin-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
+    background: #0D5EA8;
+    color: #ffffff !important;
+    border-radius: 999px;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background 0.2s ease;
+}
+
+.admin-link:hover {
+    background: #083D77;
+}
+
+/* Botón secundario (volver) */
+.admin-link.secondary {
+    background: #6B7280;
+}
+
+.admin-link.secondary:hover {
+    background: #4B5563;
+}
+
+/* =========================
+   TABLA ADMIN
+========================= */
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.admin-table th {
+    background: #0D5EA8;
+    color: #ffffff;
+}
+
+.admin-table tr:nth-child(even) {
+    background: #F5F7E6;
+}
+
+/* =========================
+   FORMULARIO EN TABLA
+========================= */
+
+.admin-table select {
+    padding: 6px;
+    border-radius: 6px;
+}
+
+.admin-table button {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    background: #0D5EA8;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.admin-table button:hover {
+    background: #083D77;
+}
+
+/* =========================
+   MÓVIL
+========================= */
+
+@media (max-width: 768px) {
+
+    .admin-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .admin-link {
+        width: 100%;
+        text-align: center;
+    }
+
+    .admin-table th,
+    .admin-table td {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
+/* =========================
+   DOCUMENTOS
+========================= */
+
+.documentos-page .card h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.documentos-page .area-btn {
+    margin-top: 10px;
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+    .documentos-page .card {
+        padding: 18px;
+    }
+}
+.documentos-page .card h3 {
+    font-size: 14px;
+}

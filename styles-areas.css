@@ -1,0 +1,55 @@
+
+/* =========================
+   ÁREAS DE REPASO
+========================= */
+
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* TARJETA DE ÁREA */
+.area-card {
+    background: #F4F6EC;
+    border-radius: 18px;
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.area-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.area-card h3 {
+    color: #0D5EA8;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.area-card p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #2E2E2E;
+}
+
+/* BOTÓN DE ENTRAR */
+.area-btn {
+    display: inline-block;
+    background: #0D5EA8;
+    color: #FFFFFF;
+    padding: 10px 22px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.area-btn:hover {
+    background: #083D77;
+}

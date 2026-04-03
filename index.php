@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUVA | Login</title>
+    <link rel="stylesheet" href="styles-login.css">
+</head>
+<body>
+
+<div class="login-container">
+    <div class="login-box">
+
+        <img src="logo.png" class="logo" alt="SUVA">
+
+        <h2>Iniciar sesión</h2>
+
+        <?php if (isset($_GET['error'])): ?>
+            <div class="error-msg">
+                <?php
+                if ($_GET['error'] === 'user') {
+                    echo "❌ El usuario no existe.";
+                } elseif ($_GET['error'] === 'pass') {
+                    echo "❌ La contraseña es incorrecta.";
+                } else {
+                    echo "❌ Error al iniciar sesión.";
+                }
+                ?>
+            </div>
+        <?php endif; ?>
+
+        <form action="login.php" method="POST">
+            <div class="input-group">
+                <input type="text" name="username" placeholder="Usuario" required>
+            </div>
+
+            <div class="input-group">
+                <input type="password" name="password" placeholder="Contraseña" required>
+            </div>
+
+            <button type="submit">Entrar</button>
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>

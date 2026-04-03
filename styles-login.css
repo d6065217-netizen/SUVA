@@ -1,0 +1,187 @@
+/* =========================
+   RESET GENERAL
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   FONDO GENERAL
+========================= */
+body {
+    min-height: 100vh;
+    background: #DCDCDC; /* gris claro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+.login-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================
+   CAJA DEL LOGIN
+========================= */
+.login-box {
+    background: #FFFFFF;
+    width: 360px;
+    padding: 40px;
+    text-align: center;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   LOGO
+========================= */
+.logo {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 160px;
+}
+
+/* =========================
+   TÍTULO
+========================= */
+.login-box h2 {
+    margin-bottom: 25px;
+    color: #2E2E2E;
+    font-size: 22px;
+}
+
+/* =========================
+   MENSAJES DE ERROR
+========================= */
+.error-msg {
+    background: #FEE2E2;
+    color: #991B1B;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 13px;
+    border-radius: 8px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #E5E7EB;
+    background: #F5F5F5;
+    font-size: 14px;
+    border-radius: 8px;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #0D5EA8;
+    background: #FFFFFF;
+}
+
+/* =========================
+   BOTÓN
+========================= */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #0D5EA8;
+    border: none;
+    color: #FFFFFF;
+    font-size: 15px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #083D77;
+}
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+@media (max-width: 768px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .login-box {
+        width: 100%;
+        max-width: 420px;
+        padding: 30px 25px;
+    }
+
+    .logo {
+        width: 140px;
+    }
+
+    .login-box h2 {
+        font-size: 20px;
+    }
+}
+
+
+/* =========================
+   FIX ALTURA EXCESIVA EN MÓVIL
+========================= */
+
+@media (max-width: 768px) {
+
+    /* El layout NO debe forzar altura */
+    .layout {
+        min-height: auto;
+    }
+
+    /* Sidebar compacto arriba */
+    .sidebar {
+        height: auto;
+        padding: 0;
+    }
+
+    .sidebar ul {
+        padding: 8px 0;
+        margin: 0;
+    }
+
+    /* Quita espacio extra del contenido */
+    .content {
+        padding: 20px 15px;
+    }
+
+    /* Reduce separación del título */
+    .content h1 {
+        margin-top: 0;
+    }
+
+    /* Tarjetas más juntas */
+    .cards {
+        margin-top: 20px;
+    }
+
+    /* Botón sin empujar hacia abajo */
+    .action {
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+
+    /* Footer no forzar espacio */
+    .footer {
+        padding: 10px;
+    }
+}
